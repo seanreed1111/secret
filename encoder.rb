@@ -11,11 +11,11 @@ def encode(message)
     [/ /, "YRZZZ"]
    ]
 
-  message_history = Hash.new(message)
+  history = Hash.new(message)
 
-  gsub_args.each_with_index do |args, index|
-    message_history[(index+1)] = message_history[index].send(:gsub, args[0], args[1])
+  gsub_args.each_with_index do |args, i|
+    history[(i+1)] = history[i].send(:gsub, args[0], args[1])
   end
 
-  puts message_history.values.last.reverse
+  puts history.values.last.reverse
 end
