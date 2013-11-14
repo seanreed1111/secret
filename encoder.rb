@@ -17,5 +17,5 @@ def encode(message)
     message_history[(index+1)] = message_history[index].send(:gsub, args[0], args[1])
   end
 
-  puts message_history.values.last
+  puts message_history.values.last.reverse
 end
